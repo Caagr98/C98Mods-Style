@@ -79,12 +79,13 @@ hr {padding: 0px;}
 .md th, .md td {
 	@include slot(16);
 	border-width: 0;
+	padding: 2px 4px;
+	cursor: unset;
 }
 .md table {
 	border-collapse: separate;
 	border-spacing: 0;
 	padding: 7px;
-	margin: 5px 0;
 	@include inv(16);
 }
 
@@ -92,17 +93,17 @@ hr {padding: 0px;}
 .footer-parent > * {opacity: 0.5;}
 .footer-parent > .footer.rounded {background-color: #FFFFFF;}
 
-.sitetable.nestedlisting .comment, .self .usertext-body .md, .comment { //First is to be more specific than RES, second for selfposts, third for /comments
+.comment, .self .usertext-body .md {
 	@include inv(32);
 	color: #000000;
-	padding: 0px 8px 8px 8px !important;
 	background-clip: content-box;
+	padding: 8px;
+}
+.comment {
+	padding-top: 0;
 	& > .midcol, & > .entry {
 		padding-top: 8px;
 	}
-}
-.sitetable.linklisting .link .md {
-	@include inv(32);
 }
 
 div.RESDialogSmall > h3 {display: none;}

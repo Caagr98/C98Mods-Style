@@ -18,7 +18,7 @@
 	//&:nth-child(1) {
 	top: 0;
 	//}
-	&> a {
+	& > a {
 		display: block;
 		width: 100%;
 		height: 100%;
@@ -30,7 +30,10 @@
 		border-image-slice: 10% 1% 15% 1% fill;
 		border-image-repeat: repeat;
 		
-		@include button(1);
+		@include button(0);
+		&:hover {
+			@include button(1); 
+		}
 	}
 }
 // NS link
