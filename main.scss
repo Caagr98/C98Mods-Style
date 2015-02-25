@@ -1,0 +1,17 @@
+@import 'templates';
+
+html:not(:lang(ns)) {
+	@import 'buttons';
+	@import 'pagestyle';
+	@import 'pageicons';
+}
+
+@import 'flair';
+
+.md {
+	@import 'crafting';
+	@import 'texticons';
+}
+.side {
+	@import 'sidebar';
+}

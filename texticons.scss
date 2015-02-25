@@ -1,0 +1,36 @@
+a[href="#icon"] {cursor: default;}
+a[title^="icon-"] {
+	display: inline-block;
+	vertical-align: top;
+	transform: rotate(0);
+	&::before {
+		content: " ";
+		display: block;
+		width: 16px;
+		height: 16px;
+		background-image: url(%%items%%);
+		background-position: 16px 16px;
+		background-repeat: no-repeat;
+	}
+}
+a[title^="icon--"] {display: none;}
+
+$rot: 'title="icon--rotate"';
+
+a[title="icon--blank"] {display: inline-block; background: none;}
+a[title="icon--combine"] + a[title^="icon-"],
+a[title="icon--combine"] + a[#{$rot}] + a[title^="icon-"],
+a[title="icon--combine"] + a[#{$rot}] + a[#{$rot}] + a[title^="icon-"],
+a[title="icon--combine"] + a[#{$rot}] + a[#{$rot}] + a[#{$rot}] + a[title^="icon-"], {
+	margin-left: -16px;
+}
+a[#{$rot}] + a[title^="icon-"] {transform: rotate(90deg);}
+a[#{$rot}] + a[#{$rot}] + a[title^="icon-"] {transform: rotate(180deg);}
+a[#{$rot}] + a[#{$rot}] + a[#{$rot}] + a[title^="icon-"] {transform: rotate(270deg);}
+
+@mixin icon($name, $x, $y) {
+	a[title=icon-#{$name}]::before {
+		background-position: $x*-16px $y*-16px;
+	}
+}
+@import 'icon-list';

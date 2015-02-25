@@ -1,0 +1,37 @@
+@mixin inv($scale) {
+	@if $scale == 16 {border-image: url(%%inv%%)   40% fill / 4px !important;}
+	@if $scale == 32 {border-image: url(%%inv-2%%) 40% fill / 8px !important;}
+	padding: ($scale/4)px;
+}
+@mixin slot($scale) {
+	@if $scale == 16 {border-image: url(%%slot%%)   25% fill / 1px !important;}
+	@if $scale == 32 {border-image: url(%%slot-2%%) 25% fill / 2px !important;}
+	border-radius: 0;
+	a {
+		color: #246;
+		&:visited {
+			color: #331054
+		}
+	}
+	.gray {}
+}
+@mixin button($type) {
+	@if $type == 0 {
+		border-image-source: url(%%button%%);
+		color: white;
+	}
+	@if $type == 1 {
+		border-image-source: url(%%button-hover%%);
+		color: yellow;
+	}
+	@if $type == 2 {
+		border-image-source: url(%%button-disabled%%);
+		color: gray;
+	}
+}
+$border-inv:    url(%%inv%%)    40% fill / 4px;
+$border-inv-2:  url(%%inv-2%%)  40% fill / 8px;
+$border-slot:   url(%%slot%%)   25% fill / 1px;
+$border-slot-2: url(%%slot-2%%) 25% fill / 2px;
+$color-inv:  #C6C6C6;
+$color-slot: #8B8B8B;

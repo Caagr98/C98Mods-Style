@@ -1,0 +1,35 @@
+.morelink {border:none;}
+
+#newlink > .tabmenu > li > a.choice,
+.morelink > a,
+button,
+.content button.RESBigEditorPop,
+.subButtons .fancy-toggle-button > a,
+.RESshortcut.RESshortcutside,
+.REStoggle.RESDashboardToggle {
+	border: 0px solid transparent;
+	border-width: 4px 4px 6px 4px;
+	border-image-slice: 10% 1% 15% 1% fill;
+	border-image-repeat: repeat;
+}
+.nub {display:none}
+.morelink {padding: 0;}
+.content button.RESBigEditorPop {text-indent: 0;}
+
+.morelink {
+	& > a {@include button(0);}
+	&:hover > a {@include button(1);}
+}.disabled .morelink > a {@include button(2);}
+button,
+.content button.RESBigEditorPop {
+	@include button(0);
+	&:hover {@include button(1);}
+	&:disabled {@include button(2);}
+}
+.subButtons .fancy-toggle-button > a,
+.RESshortcut.RESshortcutside,
+.REStoggle.RESDashboardToggle {
+	@include button(0);
+	&:hover {@include button(1);}
+	&.remove {@include button(2);}
+}

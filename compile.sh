@@ -1,0 +1,1 @@
+cat <(echo -e "/*** This stylesheet is automatically generated ***/") <(sass main.scss --style compact) > style.css

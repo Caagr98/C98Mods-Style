@@ -1,0 +1,105 @@
+//The formatting in this file is a bit weird, but it's the best I could come up with
+
+p {position: relative;}
+
+a[title="crafting-3x3"] {
+	cursor: default;
+	display: block;
+	width: 130px;
+	height: 68px;
+	border-image: $border-inv;
+	& ~ em {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border: 1px solid;
+		border-image: $border-slot;
+	}
+	&::after {
+		content: " ";
+		display: block;
+		width: 22px;
+		height: 18px;
+		position: absolute;
+		left: 68px;
+		top: 25px;
+		background-image: url(%%crafting%%);
+	}
+	& + em {left:97px;top:21px;padding:4px;
+	& + em {left: 7px;top: 7px;
+	& + em {left:25px;top: 7px;
+	& + em {left:43px;top: 7px;
+	& + em {left: 7px;top:25px;
+	& + em {left:25px;top:25px;
+	& + em {left:43px;top:25px;
+	& + em {left: 7px;top:43px;
+	& + em {left:25px;top:43px;
+	& + em {left:43px;top:43px;
+	}}}}}}}}}}
+}
+a[title="crafting-2x2"] {
+	cursor: default;
+	display: block;
+	width: 112px;
+	height: 50px;
+	border-image: $border-inv;
+	& ~ em {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border: 1px solid;
+		border-image: $border-slot;
+	}
+	&::after {
+		content: " ";
+		display: block;
+		width: 22px;
+		height: 18px;
+		position: absolute;
+		left: 50px;
+		top: 16px;
+		background-image: url(%%crafting%%);
+	}
+	& + em {left:79px;top:12px;padding:4px;
+	& + em {left: 7px;top: 7px;
+	& + em {left:25px;top: 7px;
+	& + em {left: 7px;top:25px;
+	& + em {left:25px;top:25px;
+	}}}}}
+}
+a[title="crafting-furnace"] {
+	cursor: default;
+	display: block;
+	width: 96px;
+	height: 68px;
+	border-image: $border-inv;
+	& ~ em {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border: 1px solid;
+		border-image: $border-slot;
+	}
+	
+	&::before, &::after {
+		content: " ";
+		display: block;
+		height: 18px;
+		position: absolute;
+		top: 25px;
+		background-image: url(%%crafting%%);
+	}
+	&::before {
+		width: 18px;
+		left: 7px;
+		background-position:-22px  -0px;
+	}
+	&::after {
+		width: 22px;
+		left: 32px;
+	}
+	& + em {left:63px;top:21px;padding:4px;
+	& + em {left: 7px;top: 7px;
+	& + em {left: 7px;top:43px;
+	}}}
+}

@@ -1,0 +1,35 @@
+.flair::before {
+	background-image: url(%%flair%%);
+	vertical-align: middle;
+	content: " ";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+.flair:empty {
+	border: none;
+	background: none;
+}
+
+@mixin modflair($color, $x, $y) {
+	text-shadow: 0px 0px 1px $color;
+	box-shadow: 0px 0px 0.25em 0.1em $color;
+	border-color: $color / 2;
+	background: $color / 3;
+	color: $color;
+	border-radius: 3px;
+	&::before {
+		background-position: $x*-16px $y*-16px;
+	}
+}
+
+.flair--text::before {content: none;}
+.flair--user-Caagr98    {@include modflair(#F0F, 0, 1);}
+.flair--user-Car0b1nius {@include modflair(#0F0, 0, 2);}
+
+@mixin icon($name, $x, $y) {
+	.flair-#{$name}::before {
+		background-position: $x*-16px $y*-16px;
+	}
+}
+@import 'icon-list';

@@ -1,0 +1,114 @@
+#header {
+	background: url(%%bg%%);
+	border: none;
+}
+#header-img {
+	background-image: url(%%logo%%);
+	height: 0px;
+	padding-bottom: 40px;
+}
+.pagename, .pagename a {color: #FFFFFF;}
+.tabmenu > li {
+	margin: 0px 1px;
+	& > a.choice {
+		border: solid transparent;
+		border-width: 8px 8px 0 8px;
+		border-image: url(%%tab%%) 25% 40% 25% 40% fill;
+		background: none;
+		box-sizing: border-box;
+		padding-top: 2px;
+	}
+	&:not(.selected) > a.choice {
+		border-image-source: url(%%tab%%);
+	}
+	&:hover > a.choice {
+		border-image-source: url(%%tab-current%%);
+	}
+	&.selected > a.choice {
+		border-image-source: url(%%tab-current%%);
+		padding-top: 6px;
+		border-bottom-width: 8px;
+	}
+}
+//TODO .tabpane-content, .formtabs-content
+
+div.content { //Border on top
+	border-image-width: 8px 0 0 0;
+	border-image-source: url(%%ui%%);
+	border-image-slice: 50% 0;
+	border-image-repeat: repeat;
+	padding: 8px;
+	margin: 0;
+	height: 100% !important;
+}
+.footer-parent { //Border on bottom
+	background: url(%%bg%%);
+	padding-top: 0;
+}
+.footer-parent::before {
+	content: " ";
+	width: 100%;
+	height: 8px;
+	display: block;
+	background: url(%%ui%%);
+	background-position: 0px -8px;
+}
+
+body {background: $color-inv;}
+.side, .titlebox form.toggle, .leavemoderator, .icon-menu a, .spacer {background: none;}
+.side {margin: 1px 9px;}
+.thumbnail {
+	@include slot(32);
+	background-color: #ffffff;
+}
+.link .score, .tagline, .link .rank {color: #7f7f7f;}
+.commentNavSortTypeDisabled {color: #9f9f9f;}
+.sidecontentbox > .content, hr, .RESDialogSmall, .roundfield, .linefield {
+	@include slot(32);
+	color: #000000;
+	a {
+		color: #246;
+		&:visited {
+			color: #331054
+		}
+	}
+}
+.sidecontentbox > .content {font-size: inherit;}
+hr {padding: 0px;}
+
+.md th, .md td {
+	@include slot(16);
+	border-width: 0;
+}
+.md table {
+	border-collapse: separate;
+	border-spacing: 0;
+	padding: 7px;
+	margin: 5px 0;
+	@include inv(16);
+}
+
+.debuginfo {display: none;}
+.footer-parent > * {opacity: 0.5;}
+.footer-parent > .footer.rounded {background-color: #FFFFFF;}
+
+.sitetable.nestedlisting .comment, .self .usertext-body .md, .comment { //First is to be more specific than RES, second for selfposts, third for /comments
+	@include inv(32);
+	color: #000000;
+	padding: 0px 8px 8px 8px !important;
+	background-clip: content-box;
+	& > .midcol, & > .entry {
+		padding-top: 8px;
+	}
+}
+.sitetable.linklisting .link .md {
+	@include inv(32);
+}
+
+div.RESDialogSmall > h3 {display: none;}
+div.RESDialogSmall.livePreview > div.md.RESDialogContents {
+	background: repeating-linear-gradient(-45deg, $color-inv 0px, $color-inv 40px, $color-slot 40px, $color-slot 80px) repeat scroll 0% 0% transparent;
+	padding-top: 12px;
+}
+
+#preview-table > table {width: auto;}
